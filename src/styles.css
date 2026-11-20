@@ -1,0 +1,117 @@
+@import 'tailwindcss';
+
+/*
+  Design tokens. Warm paper background, deep green ink, terracotta as the
+  second accent: professional but close, without the usual template look.
+  Every rounded rectangle is a squircle (see the base rule below).
+*/
+@theme {
+  --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Fraunces', ui-serif, Georgia, 'Times New Roman', serif;
+
+  --color-bg: #fbf7f0;
+  --color-surface: #fffdf9;
+  --color-surface-2: #f4eee3;
+  --color-raised: #ece4d6;
+  --color-line: rgb(28 48 40 / 0.1);
+  --color-line-strong: rgb(28 48 40 / 0.16);
+  --color-fg: #17231e;
+  --color-muted: #52615a;
+  --color-faint: #7d8a83;
+  --color-accent: #1f5a46;
+  --color-accent-2: #b96b34;
+  --color-accent-3: #a33a2f;
+
+  --radius-control: 12px;
+  --radius-control-lg: 14px;
+  --radius-card: 22px;
+  --radius-card-sm: 16px;
+  --radius-window: 20px;
+
+  --shadow-glow: 0 30px 60px -34px rgb(24 40 33 / 0.32);
+  --shadow-soft: 0 1px 2px rgb(24 40 33 / 0.05), 0 12px 28px -22px rgb(24 40 33 / 0.28);
+}
+
+@layer base {
+  /* Every rounded rectangle is a squircle. True circles opt out with .round. */
+  *,
+  *::before,
+  *::after {
+    corner-shape: squircle;
+    border-color: var(--color-line);
+  }
+  .round,
+  .round::before,
+  .round::after {
+    corner-shape: round;
+  }
+
+  html {
+    background-color: var(--color-bg);
+    color-scheme: light;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    letter-spacing: -0.006em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+  ::selection {
+    background: rgb(31 90 70 / 0.18);
+    color: var(--color-fg);
+  }
+  button,
+  input,
+  textarea {
+    font: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+  }
+  :focus-visible {
+    outline: 2px solid rgb(31 90 70 / 0.55);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/*
+  The depth edge: no painted border, an inset 1px edge and a soft highlight
+  along the top so the surface reads as lit from above. The element must be
+  positioned; change the edge with --depth-edge.
+*/
+@utility depth {
+  border-color: transparent;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    box-shadow:
+      inset 0 0 0 1px var(--depth-edge, var(--color-line-strong)),
+      inset 0 1px 0 var(--depth-highlight, rgb(255 255 255 / 0.85));
+    transition: box-shadow 0.25s;
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+@utility text-pretty {
+  text-wrap: pretty;
+}
