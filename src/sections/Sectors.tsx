@@ -33,8 +33,10 @@ export function Sectors() {
                     ))}
                   </ul>
                   <a
-                    href="#"
-                    className="mt-6 flex items-center justify-between gap-3 rounded-[13px] border border-dashed border-line-strong px-4 py-3 text-[13px] text-faint transition-colors hover:border-accent/50 hover:text-accent"
+                    href={sector.example}
+                    target="_blank"
+                    rel="noopener"
+                    className="mt-6 flex items-center justify-between gap-3 rounded-[13px] border border-line-strong px-4 py-3 text-[13.5px] font-medium text-accent transition-colors hover:border-accent/50 hover:bg-surface-2"
                   >
                     <span>{sectors.examplesLabel}</span>
                     <ArrowUpRight className="size-4 shrink-0" />

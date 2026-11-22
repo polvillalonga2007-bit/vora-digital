@@ -1,6 +1,5 @@
 // Tots els textos de la pàgina, en un sol lloc.
-// Els marcadors entre claudàtors ([telèfon], [WhatsApp], [correu electrònic],
-// [exemples de webs]) s'han de substituir per les dades reals.
+// Dades de contacte: es defineixen un sol cop a `phone` i `email`, més avall.
 
 // Les rutes d'imatge passen per la base del build: a GitHub Pages la web viu
 // sota /vora-digital/ i no a l'arrel del domini, i en local a l'arrel.
@@ -9,10 +8,19 @@ const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//
 export const brand = {
   name: 'Vora Digital',
   parts: ['Vora', 'Digital'],
-  // Símbol de la marca amb fons transparent. Si es canvia, ha de començar
+  // Símbol de la marca (Cinta V sobre fons negre). Si es canvia, ha de començar
   // per '/' o 'http'; si no, es mostra el símbol de text de reserva.
-  logo: asset('/images/logo-mark.png'),
+  logo: asset('/images/logo-mark.svg'),
   town: 'Manresa',
+}
+
+// Contacte del negoci. El número s'escriu sense espais i amb prefix 34.
+const phone = { display: '[telèfon]', digits: '[telèfon]' }
+const email = 'voradigital.web@gmail.com'
+const links = {
+  whatsapp: `https://wa.me/${phone.digits}`,
+  tel: `tel:+${phone.digits}`,
+  mail: `mailto:${email}`,
 }
 
 export const nav = {
@@ -31,7 +39,7 @@ export const hero = {
   title: 'La web que el teu negoci necessita,',
   titleSecond: 'feta',
   accent: 'aquí al costat',
-  lead: 'Som Vora Digital. Creem webs pròpies per a negocis petits de Manresa, el Bages i els pobles del voltant: clares, pensades per al mòbil i fetes a partir de plantilles que adaptem a cada negoci.',
+  lead: 'Creo webs pròpies per a negocis petits de Manresa, el Bages i els pobles del voltant: clares, pensades per al mòbil i fetes a partir de plantilles que adapto a cada negoci.',
   primary: { label: 'Demanar informació', href: '#contacte' },
   secondary: { label: 'Veure els preus', href: '#preus' },
   points: ['Sense quotes mensuals obligatòries', 'Domini al teu nom', 'Dues rondes de canvis incloses'],
@@ -41,10 +49,10 @@ export const hero = {
 }
 
 export const sectors = {
-  eyebrow: 'Per a qui treballem',
+  eyebrow: 'Per a qui treballo',
   title: 'Negocis de proximitat, webs de proximitat',
   description:
-    'La majoria de la gent et buscarà al telèfon abans de passar pel local. Aquests són els negocis amb què més treballem.',
+    'La majoria de la gent et buscarà al telèfon abans de passar pel local. Aquests són els negocis amb què més treballo.',
   items: [
     {
       key: 'salut',
@@ -53,6 +61,7 @@ export const sectors = {
       points: ['Serveis i especialitats', 'Equip i titulacions', 'Horaris i com arribar-hi'],
       image: asset('/images/sector-salut.jpg'),
       imageAlt: 'Sala de tractament d’una consulta petita, amb llum natural',
+      example: 'https://vora-webs.vercel.app/s/fisio-cardener',
     },
     {
       key: 'bellesa',
@@ -61,6 +70,7 @@ export const sectors = {
       points: ['Serveis i preus orientatius', 'Treballs i estil', 'Reserves per WhatsApp'],
       image: asset('/images/sector-bellesa.jpg'),
       imageAlt: 'Detall d’un estudi de bellesa amb mirall i prestatges',
+      example: 'https://vora-webs.vercel.app/s/estudi-alba',
     },
     {
       key: 'restauracio',
@@ -69,16 +79,17 @@ export const sectors = {
       points: ['Carta i menús', 'Reserves i contacte', 'Horaris i festius'],
       image: asset('/images/sector-restauracio.jpg'),
       imageAlt: 'Menjador d’un restaurant petit amb taules parades',
+      example: 'https://vora-webs.vercel.app/s/brasa-del-pont',
     },
   ],
-  examplesLabel: '[exemples de webs]',
-  examplesNote: 'Deixem aquests espais per a webs publicades. Quan n’hi hagi, hi aniran els enllaços reals.',
+  examplesLabel: 'Veure una web d’exemple',
+  examplesNote: 'Els exemples són negocis inventats, fets amb les mateixes plantilles que faig servir per als clients.',
 }
 
 export const includes = {
   eyebrow: 'Què inclou',
   title: 'Tot el que un client mira abans de trucar',
-  description: 'Cada web surt amb aquestes peces resoltes. Després hi afegim el que el teu negoci necessiti.',
+  description: 'Cada web surt amb aquestes peces resoltes. Després hi afegeixo el que el teu negoci necessiti.',
   items: [
     { key: 'portada', title: 'Portada visual', text: 'Una primera pantalla que diu en dos segons què fas i on ets.' },
     { key: 'serveis', title: 'Serveis', text: 'Què ofereixes, explicat amb paraules que entén tothom.' },
@@ -92,25 +103,25 @@ export const includes = {
 }
 
 export const process = {
-  eyebrow: 'Com treballem',
+  eyebrow: 'Com treballo',
   title: 'Quatre passes i cap sorpresa',
   description: 'Un procés senzill, pensat perquè sàpigues sempre en quin punt ets i què toca després.',
   steps: [
     {
       title: 'Parlem del negoci',
-      text: 'Una conversa distesa, per telèfon o al teu local. Ens expliques què fas, qui és el teu client i què vols resoldre.',
+      text: 'Una conversa distesa, per telèfon o al teu local. M’expliques què fas, qui és el teu client i què vols resoldre.',
     },
     {
-      title: 'Et preparem una proposta',
+      title: 'Et preparo una proposta',
       text: 'Amb l’abast, el preu i la data d’entrega per escrit. Sense lletra petita: saps què inclou abans de dir sí.',
     },
     {
       title: 'Ho revisem junts',
-      text: 'Et mostrem el disseny i els textos. Dues rondes de canvis incloses per ajustar el que calgui.',
+      text: 'Et mostro el disseny i els textos. Dues rondes de canvis incloses per ajustar el que calgui.',
     },
     {
       title: 'La publiquem',
-      text: 'Quan hi dones el vistiplau, pengem la web amb el teu domini, el primer any inclòs. Des d’aquell dia és teva.',
+      text: 'Quan hi dones el vistiplau, penjo la web amb el teu domini, el primer any inclòs. Des d’aquell dia és teva.',
     },
   ],
   note: 'El preu, l’abast i la data d’entrega queden per escrit a la proposta, abans de començar.',
@@ -120,7 +131,7 @@ export const plans = {
   eyebrow: 'Plans i preus',
   title: 'Tres maneres de començar',
   description:
-    'El preu final depèn de les seccions i del contingut que calgui. T’ho concretem a la proposta, abans de començar.',
+    'El preu final depèn de les seccions i del contingut que calgui. T’ho concreto a la proposta, abans de començar.',
   vatNote: 'Tots els imports són sense IVA.',
   tiers: [
     {
@@ -155,7 +166,7 @@ export const plans = {
   ],
   maintenance: {
     title: 'Manteniment opcional',
-    text: 'Si vols que ens ocupem de les actualitzacions i dels canvis petits, ho pots contractar. A la proposta et detallem què inclou cada opció.',
+    text: 'Si vols que m’ocupi de les actualitzacions i dels canvis petits, ho pots contractar. A la proposta et detallo què inclou cada opció.',
     options: [
       { name: 'Essencial', price: 29 },
       { name: 'Plus', price: 49 },
@@ -170,19 +181,19 @@ export const faq = {
   items: [
     {
       q: 'Quant triga tenir la web enllestida?',
-      a: 'Depèn de la mida de la web i, sobretot, de tenir els textos i les fotos a punt. A la proposta et donem una data d’entrega abans de començar, perquè sàpigues quan la tindràs.',
+      a: 'Depèn de la mida de la web i, sobretot, de tenir els textos i les fotos a punt. A la proposta et dono una data d’entrega abans de començar, perquè sàpigues quan la tindràs.',
     },
     {
       q: 'Què he de preparar jo?',
-      a: 'El que només tu saps: què ofereixes, horaris, telèfon, adreça, fotos del local o de la feina i el logotip si en tens. Si no tens textos o fotos a mà, t’ajudem a decidir què cal ensenyar i en quin ordre.',
+      a: 'El que només tu saps: què ofereixes, horaris, telèfon, adreça, fotos del local o de la feina i el logotip si en tens. Si no tens textos o fotos a mà, t’ajudo a decidir què cal ensenyar i en quin ordre.',
     },
     {
       q: 'Quants canvis puc demanar?',
-      a: 'Dues rondes de canvis estan incloses en tots els plans. Una ronda vol dir que ens passes tots els retocs junts i els apliquem. Si cal més feina, et passem pressupost abans de fer-la.',
+      a: 'Dues rondes de canvis estan incloses en tots els plans. Una ronda vol dir que em passes tots els retocs junts i els aplico. Si cal més feina, et passo pressupost abans de fer-la.',
     },
     {
       q: 'El domini serà meu?',
-      a: 'Sí. El domini es registra al teu nom i el primer any va inclòs. A partir del segon any, la renovació és a càrrec teu i et direm el preu abans.',
+      a: 'Sí. El domini es registra al teu nom i el primer any va inclòs. A partir del segon any, la renovació és a càrrec teu i et diré el preu abans.',
     },
     {
       q: 'He de pagar manteniment cada mes?',
@@ -193,22 +204,20 @@ export const faq = {
       a: 'No. Els imports que veus són sense IVA, i a la proposta hi surt el total desglossat abans de començar.',
     },
     {
-      q: 'Treballeu fora del Bages?',
-      a: 'Treballem des de Manresa per a negocis del Bages i dels pobles del voltant. Si ets una mica més enllà, escriu-nos: si ho podem fer bé, ho fem.',
+      q: 'Treballes fora del Bages?',
+      a: 'Treballo des de Manresa per a negocis del Bages i dels pobles del voltant. Si ets una mica més enllà, escriu-me: si ho puc fer bé, ho faig.',
     },
   ],
 }
 
 export const contact = {
   eyebrow: 'Parlem-ne',
-  title: 'Explica’ns què tens al cap',
-  lead: 'Digues-nos com es diu el negoci, què fas i on ets. Si ja tens web, en fem una ullada. Et responem amb les preguntes que calguin i una proposta.',
-  // Els enllaços també són marcadors: quan tinguis el número, escriu-lo a
-  // href amb prefix i sense espais, per exemple 'https://wa.me/34600123456'.
-  whatsapp: { label: 'Escriure per WhatsApp', value: '[WhatsApp]', href: 'https://wa.me/[WhatsApp]' },
-  email: { label: 'Enviar un correu', value: '[correu electrònic]', href: 'mailto:[correu electrònic]' },
-  phone: { label: 'Trucar', value: '[telèfon]', href: 'tel:[telèfon]' },
-  note: 'Som a Manresa. Parlem per telèfon, per WhatsApp o al teu local, com et vagi millor.',
+  title: 'Explica’m què tens al cap',
+  lead: 'Digues-me com es diu el negoci, què fas i on ets. Si ja tens web, hi faig una ullada. Et responc amb les preguntes que calguin i una proposta.',
+  whatsapp: { label: 'Escriure per WhatsApp', value: phone.display, href: links.whatsapp },
+  email: { label: 'Enviar un correu', value: email, href: links.mail },
+  phone: { label: 'Trucar', value: phone.display, href: links.tel },
+  note: 'Soc a Manresa. Parlem per telèfon, per WhatsApp o al teu local, com et vagi millor.',
 }
 
 export const footer = {
@@ -227,9 +236,9 @@ export const footer = {
     {
       title: 'Contacte',
       links: [
-        { label: 'WhatsApp · [WhatsApp]', href: 'https://wa.me/[WhatsApp]' },
-        { label: 'Telèfon · [telèfon]', href: 'tel:[telèfon]' },
-        { label: 'Correu · [correu electrònic]', href: 'mailto:[correu electrònic]' },
+        { label: `WhatsApp · ${phone.display}`, href: links.whatsapp },
+        { label: `Telèfon · ${phone.display}`, href: links.tel },
+        { label: `Correu · ${email}`, href: links.mail },
       ],
     },
     {
