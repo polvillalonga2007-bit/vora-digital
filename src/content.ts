@@ -2,12 +2,16 @@
 // Els marcadors entre claudàtors ([telèfon], [WhatsApp], [correu electrònic],
 // [exemples de webs]) s'han de substituir per les dades reals.
 
+// Les rutes d'imatge passen per la base del build: a GitHub Pages la web viu
+// sota /vora-digital/ i no a l'arrel del domini, i en local a l'arrel.
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
+
 export const brand = {
   name: 'Vora Digital',
   parts: ['Vora', 'Digital'],
   // Símbol de la marca amb fons transparent. Si es canvia, ha de començar
   // per '/' o 'http'; si no, es mostra el símbol de text de reserva.
-  logo: '/images/logo-mark.png',
+  logo: asset('/images/logo-mark.png'),
   town: 'Manresa',
 }
 
@@ -31,7 +35,7 @@ export const hero = {
   primary: { label: 'Demanar informació', href: '#contacte' },
   secondary: { label: 'Veure els preus', href: '#preus' },
   points: ['Sense quotes mensuals obligatòries', 'Domini al teu nom', 'Dues rondes de canvis incloses'],
-  image: '/images/hero.jpg',
+  image: asset('/images/hero.jpg'),
   imageAlt: 'Mostrador d’un petit negoci amb un ordinador i un mòbil',
   imageNote: 'Dissenyada primer per al mòbil',
 }
@@ -47,7 +51,7 @@ export const sectors = {
       name: 'Salut',
       text: 'Consultes, fisioteràpia, odontologia o psicologia. Una web serena que explica què fas i com demanar hora.',
       points: ['Serveis i especialitats', 'Equip i titulacions', 'Horaris i com arribar-hi'],
-      image: '/images/sector-salut.jpg',
+      image: asset('/images/sector-salut.jpg'),
       imageAlt: 'Sala de tractament d’una consulta petita, amb llum natural',
     },
     {
@@ -55,7 +59,7 @@ export const sectors = {
       name: 'Bellesa',
       text: 'Perruqueries, barberies i centres d’estètica. Que la primera impressió en pantalla sigui tan bona com la del local.',
       points: ['Serveis i preus orientatius', 'Treballs i estil', 'Reserves per WhatsApp'],
-      image: '/images/sector-bellesa.jpg',
+      image: asset('/images/sector-bellesa.jpg'),
       imageAlt: 'Detall d’un estudi de bellesa amb mirall i prestatges',
     },
     {
@@ -63,7 +67,7 @@ export const sectors = {
       name: 'Restauració',
       text: 'Restaurants, bars i cases de menjars. La carta, els horaris i les reserves, ben visibles abans que algú altre els trobi.',
       points: ['Carta i menús', 'Reserves i contacte', 'Horaris i festius'],
-      image: '/images/sector-restauracio.jpg',
+      image: asset('/images/sector-restauracio.jpg'),
       imageAlt: 'Menjador d’un restaurant petit amb taules parades',
     },
   ],
