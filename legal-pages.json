@@ -1,0 +1,17 @@
+[
+  {
+    "slug": "avis-legal",
+    "title": "Avís legal",
+    "description": "Titular, objecte i condicions d’ús del lloc web de Vora Digital, estudi de webs per a negocis petits del Bages."
+  },
+  {
+    "slug": "privacitat",
+    "title": "Política de privacitat",
+    "description": "Quines dades recull Vora Digital quan li escrius, per a què les fa servir, quant temps les guarda i com pots exercir els teus drets."
+  },
+  {
+    "slug": "cookies",
+    "title": "Política de cookies",
+    "description": "Aquest lloc no fa servir cookies de seguiment ni analítica. T’expliquem què passa quan el carregues i com gestionar les cookies del navegador."
+  }
+]

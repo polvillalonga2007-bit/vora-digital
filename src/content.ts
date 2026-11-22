@@ -3,7 +3,7 @@
 
 // Les rutes d'imatge passen per la base del build: a GitHub Pages la web viu
 // sota /vora-digital/ i no a l'arrel del domini, i en local a l'arrel.
-const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
+export const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
 
 export const brand = {
   name: 'Vora Digital',
@@ -226,11 +226,11 @@ export const footer = {
     {
       title: 'La pàgina',
       links: [
-        { label: 'Sectors', href: '#sectors' },
-        { label: 'Què inclou', href: '#inclou' },
-        { label: 'Procés', href: '#proces' },
-        { label: 'Preus', href: '#preus' },
-        { label: 'Preguntes', href: '#preguntes' },
+        { label: 'Sectors', href: asset('#sectors') },
+        { label: 'Què inclou', href: asset('#inclou') },
+        { label: 'Procés', href: asset('#proces') },
+        { label: 'Preus', href: asset('#preus') },
+        { label: 'Preguntes', href: asset('#preguntes') },
       ],
     },
     {
@@ -244,9 +244,9 @@ export const footer = {
     {
       title: 'Legal',
       links: [
-        { label: 'Avís legal', href: '#' },
-        { label: 'Privacitat', href: '#' },
-        { label: 'Cookies', href: '#' },
+        { label: 'Avís legal', href: asset('avis-legal/') },
+        { label: 'Privacitat', href: asset('privacitat/') },
+        { label: 'Cookies', href: asset('cookies/') },
       ],
     },
   ],

@@ -1,4 +1,4 @@
-import { brand } from '../content'
+import { asset, brand } from '../content'
 import { cx } from '../lib/cx'
 
 export function LogoMark({ className }: { className?: string }) {
@@ -26,7 +26,7 @@ export function Logo({ className }: { className?: string }) {
   // Mentre brand.logo sigui un marcador ('[logotip]') es mostra la marca de text.
   const hasLogo = brand.logo.startsWith('/') || brand.logo.startsWith('http')
   return (
-    <a href="#top" className={cx('inline-flex items-center gap-2.5 text-[16px] tracking-tight text-fg', className)}>
+    <a href={asset('#top')} className={cx('inline-flex items-center gap-2.5 text-[16px] tracking-tight text-fg', className)}>
       {hasLogo ? <img src={brand.logo} alt="" className="size-9 shrink-0 object-contain" /> : <LogoMark />}
       <span className="font-semibold">
         {brand.parts[0]} <span className="font-normal text-muted">{brand.parts[1]}</span>
