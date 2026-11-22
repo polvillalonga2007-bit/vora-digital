@@ -73,7 +73,13 @@ function workerApiDev(): Plugin {
   }
 }
 
+// GitHub Pages serves project sites from /<repo>/, so the base path is
+// configurable at build time. Locally and on Sites it stays '/'.
+const buildBase =
+  (globalThis as { process?: { env?: Record<string, string | undefined> } }).process?.env?.BASE_PATH ?? '/'
+
 export default defineConfig(({ command }) => ({
+  base: buildBase,
   plugins: [react(), tailwindcss(), command === 'build' ? cloudflare() : workerApiDev()],
   server: { port: 5173, strictPort: false },
 }))
