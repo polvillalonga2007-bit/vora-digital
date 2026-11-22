@@ -15,7 +15,7 @@ export const brand = {
 }
 
 // Contacte del negoci. El número s'escriu sense espais i amb prefix 34.
-const phone = { display: '[telèfon]', digits: '[telèfon]' }
+const phone = { display: '623 61 03 31', digits: '34623610331' }
 const email = 'voradigital.web@gmail.com'
 const links = {
   whatsapp: `https://wa.me/${phone.digits}`,
