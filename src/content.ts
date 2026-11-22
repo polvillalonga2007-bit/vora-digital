@@ -1,14 +1,13 @@
 // Tots els textos de la pàgina, en un sol lloc.
 // Els marcadors entre claudàtors ([telèfon], [WhatsApp], [correu electrònic],
-// [logotip], [exemples de webs]) s'han de substituir per les dades reals.
+// [exemples de webs]) s'han de substituir per les dades reals.
 
 export const brand = {
   name: 'Vora Digital',
   parts: ['Vora', 'Digital'],
-  // [logotip]: quan el tinguis, desa'l a public/images i posa aquí la ruta,
-  // per exemple '/images/logo.svg'. Mentre comenci per '[' es mostra el
-  // símbol de text.
-  logo: '[logotip]',
+  // Símbol de la marca amb fons transparent. Si es canvia, ha de començar
+  // per '/' o 'http'; si no, es mostra el símbol de text de reserva.
+  logo: '/images/logo-mark.png',
   town: 'Manresa',
 }
 
