@@ -6,3 +6,6 @@ dist
 !.dev.vars.example
 .DS_Store
 *.log
+
+# Captures de revisio locals
+informe-*.png
