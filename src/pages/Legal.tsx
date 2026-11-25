@@ -45,10 +45,11 @@ export function Legal({ page }: { page: LegalPage }) {
       </header>
 
       <main className="py-14 sm:py-20">
-        <Container className="max-w-[720px]">
+        <Container>
+          <div className="max-w-[720px]">
           <p className="text-[12px] font-medium tracking-[0.18em] text-accent uppercase">{page.eyebrow}</p>
           <h1 className="mt-3 font-display text-[34px] leading-[1.15] text-fg sm:text-[42px]">{page.title}</h1>
-          <p className="mt-3 text-[13px] text-faint">Darrera actualització: {page.updated}</p>
+          <p className="mt-3 text-[13px] text-muted">Darrera actualització: {page.updated}</p>
           <p className="mt-6 text-[16px] leading-relaxed text-muted">
             <Rich text={page.intro} />
           </p>
@@ -92,9 +93,10 @@ export function Legal({ page }: { page: LegalPage }) {
             .
           </div>
 
-          <a href={asset('')} className="mt-8 inline-flex text-[14px] text-accent hover:underline">
-            ← Tornar a la pàgina principal
-          </a>
+            <a href={asset('')} className="mt-8 inline-flex text-[14px] text-accent hover:underline">
+              ← Tornar a la pàgina principal
+            </a>
+          </div>
         </Container>
       </main>
 
