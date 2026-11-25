@@ -36,7 +36,7 @@ export function Nav() {
       >
         <Container className="flex h-16 items-center justify-between gap-4">
           <Logo />
-          <nav aria-label="Seccions" className="hidden items-center gap-1 md:flex">
+          <nav aria-label="Seccions" className="hidden items-center gap-1 lg:flex">
             {nav.links.map((link) => (
               <a
                 key={link.href}
@@ -47,7 +47,7 @@ export function Nav() {
               </a>
             ))}
           </nav>
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Button href={nav.cta.href} className="h-10 px-4 text-[14px]">
               {nav.cta.label}
             </Button>
@@ -57,7 +57,7 @@ export function Nav() {
             aria-label={open ? 'Tanca el menú' : 'Obre el menú'}
             aria-expanded={open}
             onClick={() => setOpen((value) => !value)}
-            className="grid size-10 place-items-center rounded-[11px] text-fg transition-colors hover:bg-surface-2 md:hidden"
+            className="grid size-10 place-items-center rounded-[11px] text-fg transition-colors hover:bg-surface-2 lg:hidden"
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
@@ -72,7 +72,7 @@ export function Nav() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.22 }}
-            className="border-b border-line bg-bg md:hidden"
+            className="border-b border-line bg-bg lg:hidden"
           >
             <Container className="py-4">
               <ul className="flex flex-col">

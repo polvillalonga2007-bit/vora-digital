@@ -19,8 +19,8 @@ export type LegalPage = {
 
 // El titular del lloc. Quan el coworking doni l'adreça, afegeix a TOWN el
 // carrer, el número i el codi postal (per exemple: «Carrer X, 12, 08241 Manresa»).
-const OWNER = 'Pol Villalonga'
-const NIF = '39475092P'
+const OWNER = '[[NOM]]'
+const NIF = '[[NIF]]'
 const TOWN = 'Manresa (Bages)'
 const EMAIL = 'voradigital.web@gmail.com'
 const PHONE = '623 61 03 31'
@@ -53,15 +53,15 @@ export const legalPages: LegalPage[] = [
       {
         heading: 'Objecte',
         paragraphs: [
-          'Vora Digital es dedica al disseny i desenvolupament de pàgines web per a negocis petits del Bages i de pobles propers.',
-          'Aquest lloc web té una finalitat informativa: explica què fem, què inclou una web, com treballem, els preus orientatius i com posar-s’hi en contacte. La informació que hi trobaràs no constitueix una oferta contractual; les condicions definitives de cada projecte es pacten per escrit abans de començar.',
+          'Vora Digital es dedica al disseny i desenvolupament de pàgines web i eines digitals per a negocis petits del Bages i de la resta de la Catalunya Central.',
+          'Aquest lloc web té una finalitat informativa: explica què faig, què inclou una web, com treballo, els preus orientatius i com posar-s’hi en contacte. La informació que hi trobaràs no constitueix una oferta contractual; les condicions definitives de cada projecte es pacten per escrit abans de començar.',
         ],
       },
       {
         heading: 'Condicions d’ús',
         paragraphs: [
           'L’accés a aquest lloc és gratuït i no requereix registre. En fer-lo servir et compromets a fer-ne un ús lícit i a no dur-hi a terme activitats que puguin danyar el lloc, els seus continguts o els drets de tercers.',
-          'Ens reservem el dret de modificar, suspendre o retirar qualsevol part del lloc sense avís previ, així com d’actualitzar aquestes condicions.',
+          'Em reservo el dret de modificar, suspendre o retirar qualsevol part del lloc sense avís previ, així com d’actualitzar aquestes condicions.',
         ],
       },
       {
@@ -105,20 +105,20 @@ export const legalPages: LegalPage[] = [
       {
         heading: 'Qui és el responsable',
         paragraphs: [
-          `El responsable del tractament és Vora Digital, nom comercial de ${OWNER}, amb NIF ${NIF} i domicili a ${TOWN}. Pots escriure’ns a ${EMAIL} o trucar al ${PHONE}.`,
+          `El responsable del tractament és Vora Digital, nom comercial de ${OWNER}, amb NIF ${NIF} i domicili a ${TOWN}. Pots escriure’m a ${EMAIL} o trucar al ${PHONE}.`,
         ],
       },
       {
         heading: 'Quines dades tractem',
         paragraphs: [
-          'Només tractem les dades que ens dones tu quan ens escrius per WhatsApp, per correu electrònic o quan truques: el teu nom, el telèfon o el correu de contacte, el nom del negoci i la informació que ens expliques per poder preparar una proposta.',
-          'No et demanem dades que no calguin per respondre’t i no tractem dades especialment protegides (salut, ideologia, etc.) tret que tu ens les facilitis voluntàriament i siguin necessàries per al projecte.',
+          'Només tracto les dades que em dones tu quan m’escrius per WhatsApp, per correu electrònic o quan truques: el teu nom, el telèfon o el correu de contacte, el nom del negoci i la informació que m’expliques per poder preparar una proposta.',
+          'No et demano dades que no calguin per respondre’t i no tracto dades especialment protegides (salut, ideologia, etc.) tret que tu me les facilitis voluntàriament i siguin necessàries per al projecte.',
         ],
       },
       {
         heading: 'Per a què les fem servir i amb quina base legal',
         list: [
-          'Respondre la teva consulta i preparar una proposta: base jurídica el teu consentiment (article 6.1.a del RGPD) i l’interès legítim a atendre una sol·licitud que ens fas tu (article 6.1.f).',
+          'Respondre la teva consulta i preparar una proposta: base jurídica el teu consentiment (article 6.1.a del RGPD) i l’interès legítim a atendre una sol·licitud que em fas tu (article 6.1.f).',
           'Executar el projecte si finalment contractes: base jurídica l’execució del contracte (article 6.1.b).',
           'Complir obligacions legals, fiscals i comptables: base jurídica el compliment d’una obligació legal (article 6.1.c).',
         ],
@@ -126,46 +126,46 @@ export const legalPages: LegalPage[] = [
       {
         heading: 'Quant de temps les guardem',
         paragraphs: [
-          'Si només ens has fet una consulta, guardem les dades mentre duri la conversa i, com a màxim, durant un any des de l’últim contacte.',
-          'Si hi ha una relació contractual, les conservem mentre duri el servei i després durant els terminis que exigeix la llei (sis anys pel Codi de comerç i quatre anys per les obligacions fiscals).',
+          'Si només m’has fet una consulta, guardo les dades mentre duri la conversa i, com a màxim, durant un any des de l’últim contacte.',
+          'Si hi ha una relació contractual, les conservo mentre duri el servei i després durant els terminis que exigeix la llei (sis anys pel Codi de comerç i quatre anys per les obligacions fiscals).',
         ],
       },
       {
         heading: 'Qui hi pot tenir accés',
         paragraphs: [
-          'No venem ni cedim les teves dades a ningú. Només hi poden accedir els proveïdors tecnològics que necessitem per treballar, que actuen com a encarregats del tractament:',
+          'No venc ni cedeixo les teves dades a ningú. Només hi poden accedir els proveïdors tecnològics que necessito per treballar, que actuen com a encarregats del tractament:',
         ],
         list: [
           'GitHub, que allotja aquest lloc web als Estats Units, amb garanties de transferència internacional (clàusules contractuals tipus de la Comissió Europea).',
           'Google, per al correu electrònic i per a les tipografies que carrega el web.',
-          'Meta, si tries escriure’ns per WhatsApp.',
+          'Meta, si tries escriure’m per WhatsApp.',
         ],
       },
       {
         heading: 'Quins drets tens',
         paragraphs: [
-          'Pots exercir en qualsevol moment els drets d’accés, rectificació, supressió, limitació del tractament, oposició i portabilitat, així com retirar el consentiment que ens hagis donat. Només cal que ens escriguis a ' +
+          'Pots exercir en qualsevol moment els drets d’accés, rectificació, supressió, limitació del tractament, oposició i portabilitat, així com retirar el consentiment que m’hagis donat. Només cal que m’escriguis a ' +
             EMAIL +
             ' indicant què vols.',
-          'Si creus que no t’hem atès bé, pots presentar una reclamació davant l’Agència Espanyola de Protecció de Dades (aepd.es), carrer Jorge Juan 6, 28001 Madrid.',
+          'Si creus que no t’he atès bé, pots presentar una reclamació davant l’Agència Espanyola de Protecció de Dades (aepd.es), carrer Jorge Juan 6, 28001 Madrid.',
         ],
       },
       {
         heading: 'Seguretat',
         paragraphs: [
-          'El lloc es publica amb connexió xifrada (HTTPS) i accés restringit al correu i als panells de gestió. Apliquem mesures tècniques i organitzatives raonables per protegir les dades, però cap sistema és infal·lible.',
+          'El lloc es publica amb connexió xifrada (HTTPS) i accés restringit al correu i als panells de gestió. Aplico mesures tècniques i organitzatives raonables per protegir les dades, però cap sistema és infal·lible.',
         ],
       },
       {
         heading: 'Menors d’edat',
         paragraphs: [
-          'Aquest lloc i els serveis no s’adrecen a menors de 14 anys. Si creus que hem rebut dades d’un menor sense autorització, escriu-nos i les esborrarem.',
+          'Aquest lloc i els serveis no s’adrecen a menors de 14 anys. Si creus que he rebut dades d’un menor sense autorització, escriu-me i les esborraré.',
         ],
       },
       {
         heading: 'Canvis en aquesta política',
         paragraphs: [
-          'Si canvia la manera com tractem les dades, actualitzarem aquesta pàgina i en modificarem la data de revisió. La versió publicada aquí és sempre la vigent.',
+          'Si canvia la manera com tracto les dades, actualitzaré aquesta pàgina i en modificaré la data de revisió. La versió publicada aquí és sempre la vigent.',
         ],
       },
     ],
@@ -214,7 +214,7 @@ export const legalPages: LegalPage[] = [
       {
         heading: 'Canvis en aquesta política',
         paragraphs: [
-          'Si algun dia afegim una eina que instal·li cookies (per exemple, estadístiques de visites), actualitzarem aquesta pàgina i et demanarem el consentiment abans de fer-la servir.',
+          'Si algun dia afegeixo una eina que instal·li cookies (per exemple, estadístiques de visites), actualitzaré aquesta pàgina i et demanaré el consentiment abans de fer-la servir.',
         ],
       },
     ],

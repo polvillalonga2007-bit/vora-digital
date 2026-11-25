@@ -10,7 +10,7 @@ export function Footer() {
           <div>
             <Logo />
             <p className="mt-4 max-w-xs text-[14px] leading-relaxed text-muted">{footer.blurb}</p>
-            <p className="mt-4 text-[13px] text-faint">{brand.town} · Bages</p>
+            <p className="mt-4 text-[13px] text-faint">{brand.town} · {brand.zone}</p>
           </div>
 
           {footer.columns.map((column) => (

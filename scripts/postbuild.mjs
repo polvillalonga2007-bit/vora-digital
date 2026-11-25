@@ -31,7 +31,7 @@ for (const page of pages) {
   const html = index
     .replace(
       /<title>[\s\S]*?<\/title>/,
-      `<title>${page.title} · Vora Digital</title>\n    <link rel="canonical" href="${SITE}/${page.slug}/" />`,
+      `<title>${page.title} · Vora Digital</title>\n    <link rel="canonical" href="${SITE}/${page.slug}.html" />`,
     )
     .replace(
       /<meta\s+name="description"[\s\S]*?\/>/,
@@ -48,7 +48,7 @@ for (const page of pages) {
     )
     .replace(
       /<meta\s+property="og:url"[^>]*>/,
-      `<meta property="og:url" content="${SITE}/${page.slug}/" />`,
+      `<meta property="og:url" content="${SITE}/${page.slug}.html" />`,
     )
     .replace(
       /<meta\s+name="twitter:title"[^>]*>/,
@@ -59,6 +59,9 @@ for (const page of pages) {
       `<meta name="twitter:description" content="${page.description}" />`,
     )
 
+  // La pàgina viu com a fitxer .html, que és com l'enllaça el peu, i també com
+  // a carpeta amb index.html perquè els enllaços antics no es trenquin.
+  writeFileSync(join(client, `${page.slug}.html`), html)
   const target = join(client, page.slug)
   mkdirSync(target, { recursive: true })
   writeFileSync(join(target, 'index.html'), html)

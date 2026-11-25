@@ -11,7 +11,9 @@ import './styles.css'
 // final o des del servidor de desenvolupament.
 const path = window.location.pathname
 const base = import.meta.env.BASE_URL
-const slug = (path.startsWith(base) ? path.slice(base.length) : path).replace(/^\/+|\/+$/g, '')
+const slug = (path.startsWith(base) ? path.slice(base.length) : path)
+  .replace(/\.html?$/i, '')
+  .replace(/^\/+|\/+$/g, '')
 const page = legalPages.find((candidate) => candidate.slug === slug)
 
 createRoot(document.getElementById('root')!).render(

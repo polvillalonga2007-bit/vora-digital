@@ -73,6 +73,27 @@ function workerApiDev(): Plugin {
   }
 }
 
+// En desenvolupament no hi ha postbuild, així que les pàgines legals encara no
+// existeixen com a fitxers .html. Servim la closca de l'aplicació, igual que fa
+// GitHub Pages amb els fitxers generats.
+const legalSlugs = ['avis-legal', 'privacitat', 'cookies']
+function legalPageDev(): Plugin {
+  return {
+    name: 'legal-pages-dev',
+    apply: 'serve',
+    configureServer(server: ViteDevServer) {
+      const middlewares = server.middlewares as unknown as {
+        use(handler: (req: DevRequest, res: DevResponse, next: () => void) => void): void
+      }
+      middlewares.use((req, _res, next) => {
+        const last = (req.url ?? '').split('?')[0].split('/').filter(Boolean).pop() ?? ''
+        if (legalSlugs.includes(last.replace(/\.html$/, ''))) req.url = '/index.html'
+        next()
+      })
+    },
+  }
+}
+
 // GitHub Pages serves project sites from /<repo>/, so the base path is
 // configurable at build time. Locally and on Sites it stays '/'.
 const buildBase =
@@ -80,6 +101,6 @@ const buildBase =
 
 export default defineConfig(({ command }) => ({
   base: buildBase,
-  plugins: [react(), tailwindcss(), command === 'build' ? cloudflare() : workerApiDev()],
+  plugins: [react(), tailwindcss(), legalPageDev(), command === 'build' ? cloudflare() : workerApiDev()],
   server: { port: 5173, strictPort: false },
 }))

@@ -15,11 +15,9 @@ export function Hero() {
               {hero.kicker}
             </p>
 
-            <h1 className="mt-6 text-balance font-display text-[34px] leading-[1.06] tracking-[-0.02em] sm:text-[46px] lg:text-[54px]">
-              {hero.title}{' '}
-              <span className="block">
-                {hero.titleSecond} <span className="italic text-accent">{hero.accent}</span>.
-              </span>
+            <h1 className="mt-6 text-balance font-display text-[30px] leading-[1.1] tracking-[-0.02em] sm:text-[38px] lg:text-[44px]">
+              {hero.title}
+              <span className="mt-2 block italic text-accent">{hero.accent}</span>
             </h1>
 
             <p className="mt-5 max-w-xl text-pretty text-[16.5px] leading-relaxed text-muted sm:text-[18px]">{hero.lead}</p>

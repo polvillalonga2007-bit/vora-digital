@@ -88,6 +88,7 @@ export function Plans() {
                     <p className="mt-1 font-display text-[24px] leading-none tracking-[-0.01em]">
                       {option.price} €<span className="ml-1 font-sans text-[12.5px] text-faint">/mes</span>
                     </p>
+                    <p className="mt-2 text-[12.5px] leading-relaxed text-muted">{option.text}</p>
                   </li>
                 ))}
               </ul>

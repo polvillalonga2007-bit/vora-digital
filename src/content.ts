@@ -12,6 +12,8 @@ export const brand = {
   // per '/' o 'http'; si no, es mostra el símbol de text de reserva.
   logo: asset('/images/logo-mark.svg'),
   town: 'Manresa',
+  zone: 'Bages i Catalunya Central',
+  comarques: 'Bages, Moianès, Solsonès, Berguedà, Anoia i Osona',
 }
 
 // Contacte del negoci. El número s'escriu sense espais i amb prefix 34.
@@ -23,23 +25,26 @@ const links = {
   mail: `mailto:${email}`,
 }
 
+// WhatsApp amb el missatge ja escrit, per demanar un servei o un pack solt.
+export const whatsappFor = (message: string) => `${links.whatsapp}?text=${encodeURIComponent(message)}`
+
 export const nav = {
   links: [
     { label: 'Sectors', href: '#sectors' },
     { label: 'Què inclou', href: '#inclou' },
     { label: 'Procés', href: '#proces' },
     { label: 'Preus', href: '#preus' },
+    { label: 'Serveis', href: '#serveis' },
     { label: 'Preguntes', href: '#preguntes' },
   ],
   cta: { label: 'Demanar informació', href: '#contacte' },
 }
 
 export const hero = {
-  kicker: 'Manresa · Bages i rodalia',
-  title: 'La web que el teu negoci necessita,',
-  titleSecond: 'feta',
-  accent: 'aquí al costat',
-  lead: 'Creo webs pròpies per a negocis petits de Manresa, el Bages i els pobles del voltant: clares, pensades per al mòbil i fetes a partir de plantilles que adapto a cada negoci.',
+  kicker: `Manresa · ${brand.zone}`,
+  title: 'Ajudo els negocis petits de la Catalunya Central a no perdre clients:',
+  accent: 'web, reserves, recordatoris i un assistent que respon quan tu no pots.',
+  lead: 'Fet amb eines d’IA: més ràpid i més barat, però amb tracte de proximitat.',
   primary: { label: 'Demanar informació', href: '#contacte' },
   secondary: { label: 'Veure els preus', href: '#preus' },
   points: ['Sense quotes mensuals obligatòries', 'Domini al teu nom', 'Dues rondes de canvis incloses'],
@@ -52,7 +57,7 @@ export const sectors = {
   eyebrow: 'Per a qui treballo',
   title: 'Negocis de proximitat, webs de proximitat',
   description:
-    'La majoria de la gent et buscarà al telèfon abans de passar pel local. Aquests són els negocis amb què més treballo.',
+    'La majoria de la gent et buscarà al telèfon abans de passar pel local. Aquests són els negocis amb què més treballo al Bages i a la resta de la Catalunya Central.',
   items: [
     {
       key: 'salut',
@@ -166,13 +171,107 @@ export const plans = {
   ],
   maintenance: {
     title: 'Manteniment opcional',
-    text: 'Si vols que m’ocupi de les actualitzacions i dels canvis petits, ho pots contractar. A la proposta et detallo què inclou cada opció.',
+    text: 'Si vols que m’ocupi de les actualitzacions i dels canvis petits, ho pots contractar. El Plus inclou, a més, un extra al teu gust: recordatoris de cita o assistent a la web.',
     options: [
-      { name: 'Essencial', price: 29 },
-      { name: 'Plus', price: 49 },
+      { name: 'Essencial', price: 29, text: 'Actualitzacions i canvis petits.' },
+      { name: 'Plus', price: 49, text: 'A més, un extra: recordatoris o assistent.' },
     ],
     note: 'Sense manteniment, els canvis es cobren a 30 €/hora.',
   },
+}
+
+// Serveis que es poden contractar sols, sense fer la web.
+export const services = {
+  eyebrow: 'Fora de la web',
+  title: 'Serveis per separat o combinats',
+  description:
+    'No cal que facis la web amb mi. Pots contractar només l’app, només l’assistent, només les reserves o els recordatoris, i els connecto a la web que ja tinguis o a Google i WhatsApp.',
+  ctaLabel: 'Vull només això',
+  note: 'Preus «des de», sense IVA. Si ja tens web, hi connecto el servei; si no, també te’n puc fer una.',
+  items: [
+    {
+      key: 'google',
+      name: 'Fitxa de Google al dia',
+      problem: 'Que et trobin i vegin les dades bones.',
+      text: 'Deixo la teva fitxa de Google amb els horaris, el telèfon, les fotos i els serveis correctes, que és el primer que mira qui et busca pel nom.',
+      price: '90 €',
+      period: 'pagament únic',
+      from: true,
+      href: whatsappFor('Hola, m’interessa només la fitxa de Google al dia'),
+    },
+    {
+      key: 'reserves',
+      name: 'Reserva online',
+      problem: 'Que triïn dia i hora sense trucar.',
+      text: 'Un calendari a la web amb els teus horaris reals: el client reserva quan li va bé, encara que tu estiguis treballant.',
+      price: '150 €',
+      period: 'pagament únic',
+      from: true,
+      href: whatsappFor('Hola, m’interessa només la reserva online'),
+    },
+    {
+      key: 'recordatoris',
+      name: 'Recordatoris de cita',
+      problem: 'Menys gent que no es presenta.',
+      text: 'Cada client rep un correu automàtic 24 hores abans de la cita, amb l’hora, l’adreça i com canviar-la si no pot venir.',
+      price: '150 €',
+      period: '+ 15 €/mes',
+      from: true,
+      href: whatsappFor('Hola, m’interessa només els recordatoris de cita'),
+    },
+    {
+      key: 'assistent',
+      name: 'Assistent a la web 24 h',
+      problem: 'Que ningú no es quedi sense resposta.',
+      text: 'Respon horaris, preus i serveis quan tu no hi ets, i passa a WhatsApp els casos que necessiten una persona.',
+      price: '250 €',
+      period: '+ 19 €/mes',
+      from: true,
+      href: whatsappFor('Hola, m’interessa només l’assistent a la web'),
+    },
+    {
+      key: 'app',
+      name: 'App per al mòbil',
+      problem: 'Que tornin sense targetes de paper.',
+      text: 'Targeta de punts, avisos i carta al mòbil del client, amb la teva marca. Et passo pressupost segons què hi vulguis.',
+      price: 'a consultar',
+      period: '',
+      from: false,
+      href: whatsappFor('Hola, m’interessa només l’app per al mòbil'),
+    },
+  ],
+}
+
+// Packs: la web amb els serveis que la fan rendir més.
+export const packs = {
+  eyebrow: 'Packs',
+  title: 'Si ho vols tot, surt més a compte',
+  description:
+    'Dos conjunts pensats per a negocis que reben clients amb hora. Surten més barats que contractar les peces per separat.',
+  cta: 'Vull aquest pack',
+  note: 'Els packs inclouen el manteniment Plus (49 €/mes) mentre duri el servei. Tots els imports són sense IVA.',
+  items: [
+    {
+      key: 'cita',
+      name: 'Pack Cita',
+      audience: 'Perruqueries, fisios i tallers',
+      text: 'Per a qui rep clients amb hora reservada: que en triïn una des de la web i que ningú no se n’oblidi.',
+      includes: ['Web Estàndard', 'Reserva online', 'Recordatoris de cita'],
+      price: 890,
+      maintenance: 'Manteniment Plus',
+      href: whatsappFor('Hola, m’interessa el Pack Cita'),
+    },
+    {
+      key: 'bar',
+      name: 'Pack Bar',
+      audience: 'Bars i restaurants',
+      text: 'Per a qui no pot atendre el telèfon a mig servei: l’assistent respon horaris, carta i reserves, i el que calgui passa a WhatsApp.',
+      includes: ['Web Estàndard', 'Assistent a la web 24 h'],
+      price: 890,
+      maintenance: 'Manteniment Plus',
+      href: whatsappFor('Hola, m’interessa el Pack Bar'),
+    },
+  ],
 }
 
 export const faq = {
@@ -197,15 +296,19 @@ export const faq = {
     },
     {
       q: 'He de pagar manteniment cada mes?',
-      a: 'No. Cap pla porta quota mensual obligatòria. Si vols, pots contractar el manteniment Essencial (29 €/mes) o Plus (49 €/mes). Si no, els canvis que demanis es cobren a 30 €/hora.',
+      a: 'No. Cap pla porta quota mensual obligatòria. Si vols, pots contractar el manteniment Essencial (29 €/mes) o Plus (49 €/mes), que a més inclou un extra: recordatoris de cita o assistent. Si no, els canvis que demanis es cobren a 30 €/hora.',
+    },
+    {
+      q: 'Puc contractar només una part?',
+      a: 'Sí. La reserva online, els recordatoris, l’assistent, la fitxa de Google o l’app es poden contractar sols, sense fer la web amb mi. Els connecto a la web que ja tinguis o a Google i WhatsApp.',
     },
     {
       q: 'Els preus porten IVA?',
       a: 'No. Els imports que veus són sense IVA, i a la proposta hi surt el total desglossat abans de començar.',
     },
     {
-      q: 'Treballes fora del Bages?',
-      a: 'Treballo des de Manresa per a negocis del Bages i dels pobles del voltant. Si ets una mica més enllà, escriu-me: si ho puc fer bé, ho faig.',
+      q: 'Treballes fora de Manresa?',
+      a: `Sí. Treballo des de Manresa per a negocis del ${brand.zone}: ${brand.comarques}. Si ets una mica més enllà, escriu-me: si ho puc fer bé, ho faig.`,
     },
   ],
 }
@@ -221,7 +324,7 @@ export const contact = {
 }
 
 export const footer = {
-  blurb: 'Webs per a negocis petits del Bages. Fetes aquí, pensades per al mòbil i propietat teva.',
+  blurb: `Webs i eines digitals per a negocis petits del ${brand.zone}. Fetes aquí, pensades per al mòbil i propietat teva.`,
   columns: [
     {
       title: 'La pàgina',
@@ -230,6 +333,8 @@ export const footer = {
         { label: 'Què inclou', href: asset('#inclou') },
         { label: 'Procés', href: asset('#proces') },
         { label: 'Preus', href: asset('#preus') },
+        { label: 'Serveis', href: asset('#serveis') },
+        { label: 'Packs', href: asset('#packs') },
         { label: 'Preguntes', href: asset('#preguntes') },
       ],
     },
@@ -244,9 +349,9 @@ export const footer = {
     {
       title: 'Legal',
       links: [
-        { label: 'Avís legal', href: asset('avis-legal/') },
-        { label: 'Privacitat', href: asset('privacitat/') },
-        { label: 'Cookies', href: asset('cookies/') },
+        { label: 'Avís legal', href: asset('avis-legal.html') },
+        { label: 'Privacitat', href: asset('privacitat.html') },
+        { label: 'Cookies', href: asset('cookies.html') },
       ],
     },
   ],
