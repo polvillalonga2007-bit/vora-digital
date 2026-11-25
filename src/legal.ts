@@ -17,10 +17,11 @@ export type LegalPage = {
   sections: LegalSection[]
 }
 
-// El titular del lloc. Quan hi hagi alta censal, aquesta línia passa a ser el
-// nom i cognoms (o la raó social) i s'afegeixen el NIF i el domicili fiscal a
-// les dues seccions que els necessiten.
-const OWNER = 'Vora Digital, projecte de disseny i desenvolupament web de Manresa'
+// El titular del lloc. Quan el coworking doni l'adreça, afegeix a TOWN el
+// carrer, el número i el codi postal (per exemple: «Carrer X, 12, 08241 Manresa»).
+const OWNER = 'Pol Villalonga'
+const NIF = '39475092P'
+const TOWN = 'Manresa (Bages)'
 const EMAIL = 'voradigital.web@gmail.com'
 const PHONE = '623 61 03 31'
 
@@ -44,9 +45,9 @@ export const legalPages: LegalPage[] = [
       {
         heading: 'Titular del lloc web',
         paragraphs: [
-          `Aquest lloc web és titularitat de ${OWNER}. És una pàgina informativa: explica què faig, com treballo i quins preus orientatius tinc, però no permet contractar ni pagar en línia.`,
+          `En compliment de l’article 10 de la Llei 34/2002 de serveis de la societat de la informació i comerç electrònic (LSSI-CE), s’informa que aquest lloc web és titularitat de Vora Digital, nom comercial de ${OWNER}, amb NIF ${NIF} i domicili fiscal a ${TOWN}.`,
           `Per a qualsevol comunicació: correu electrònic ${EMAIL} o telèfon ${PHONE}.`,
-          'En el moment de formalitzar el primer encàrrec, aquesta pàgina incorporarà les dades d’identificació fiscal que exigeix l’article 10 de la Llei 34/2002 de serveis de la societat de la informació i comerç electrònic (LSSI-CE): nom i cognoms, NIF i domicili fiscal.',
+          'Aquest lloc té caràcter informatiu: explica què faig, com treballo i quins preus orientatius tinc, però no permet contractar ni pagar en línia.',
         ],
       },
       {
@@ -104,7 +105,7 @@ export const legalPages: LegalPage[] = [
       {
         heading: 'Qui és el responsable',
         paragraphs: [
-          `El responsable del tractament és ${OWNER}. Pots escriure’ns a ${EMAIL} o trucar al ${PHONE}.`,
+          `El responsable del tractament és Vora Digital, nom comercial de ${OWNER}, amb NIF ${NIF} i domicili a ${TOWN}. Pots escriure’ns a ${EMAIL} o trucar al ${PHONE}.`,
         ],
       },
       {
