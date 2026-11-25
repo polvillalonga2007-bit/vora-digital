@@ -17,9 +17,10 @@ export type LegalPage = {
   sections: LegalSection[]
 }
 
-const OWNER = '[[nom i cognoms o raó social]]'
-const NIF = '[[NIF]]'
-const ADDRESS = '[[adreça completa]]'
+// El titular del lloc. Quan hi hagi alta censal, aquesta línia passa a ser el
+// nom i cognoms (o la raó social) i s'afegeixen el NIF i el domicili fiscal a
+// les dues seccions que els necessiten.
+const OWNER = 'Vora Digital, projecte de disseny i desenvolupament web de Manresa'
 const EMAIL = 'voradigital.web@gmail.com'
 const PHONE = '623 61 03 31'
 
@@ -36,15 +37,16 @@ export const legalPages: LegalPage[] = [
     title: 'Avís legal',
     description:
       'Titular, objecte i condicions d’ús del lloc web de Vora Digital, a Manresa.',
-    updated: '22 de novembre de 2026',
+    updated: '25 de novembre de 2026',
     intro:
       'Aquest avís legal regula l’accés i l’ús del lloc web de Vora Digital. En navegar-hi, acceptes les condicions que s’hi expliquen.',
     sections: [
       {
         heading: 'Titular del lloc web',
         paragraphs: [
-          `En compliment de l’article 10 de la Llei 34/2002 de serveis de la societat de la informació i comerç electrònic (LSSI-CE), s’informa que aquest lloc web és titularitat de Vora Digital, nom comercial de ${OWNER}, amb NIF ${NIF} i domicili fiscal a ${ADDRESS}, Manresa (Bages).`,
+          `Aquest lloc web és titularitat de ${OWNER}. És una pàgina informativa: explica què faig, com treballo i quins preus orientatius tinc, però no permet contractar ni pagar en línia.`,
           `Per a qualsevol comunicació: correu electrònic ${EMAIL} o telèfon ${PHONE}.`,
+          'En el moment de formalitzar el primer encàrrec, aquesta pàgina incorporarà les dades d’identificació fiscal que exigeix l’article 10 de la Llei 34/2002 de serveis de la societat de la informació i comerç electrònic (LSSI-CE): nom i cognoms, NIF i domicili fiscal.',
         ],
       },
       {
@@ -95,14 +97,14 @@ export const legalPages: LegalPage[] = [
     title: 'Política de privacitat',
     description:
       'Quines dades recollim quan ens escrius, per a què les fem servir i com les pots esborrar.',
-    updated: '22 de novembre de 2026',
+    updated: '25 de novembre de 2026',
     intro:
       'Aquesta política explica què fem amb les dades que ens dones quan et poses en contacte amb Vora Digital, d’acord amb el Reglament (UE) 2016/679 (RGPD) i la Llei orgànica 3/2018 (LOPDGDD).',
     sections: [
       {
         heading: 'Qui és el responsable',
         paragraphs: [
-          `El responsable del tractament és Vora Digital, nom comercial de ${OWNER}, amb NIF ${NIF} i domicili a ${ADDRESS}, Manresa (Bages). Pots escriure’ns a ${EMAIL} o trucar al ${PHONE}.`,
+          `El responsable del tractament és ${OWNER}. Pots escriure’ns a ${EMAIL} o trucar al ${PHONE}.`,
         ],
       },
       {
