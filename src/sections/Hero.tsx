@@ -41,16 +41,35 @@ export function Hero() {
             </ul>
           </div>
 
-          <div className="relative pb-6">
-            <div className="depth relative overflow-hidden rounded-card bg-surface p-2 shadow-glow">
-              <img
-                src={hero.image}
-                alt={hero.imageAlt}
-                className="aspect-[4/3] w-full rounded-[18px] object-cover"
-                loading="eager"
-              />
+          <div className="relative mx-auto w-full max-w-[460px] pb-8 lg:max-w-none">
+            <div className="relative flex items-end justify-center">
+              {hero.phones.map((phone, index) => (
+                <a
+                  key={phone.href}
+                  href={phone.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={phone.alt}
+                  className={
+                    index === 0
+                      ? 'relative z-10 w-[56%] max-w-[260px] translate-x-[12%] transition-transform hover:-translate-y-1'
+                      : 'relative w-[50%] max-w-[232px] -translate-x-[12%] translate-y-[-8%] rotate-[4deg] opacity-95 transition-transform hover:-translate-y-[10%]'
+                  }
+                >
+                  <div className="rounded-[34px] bg-[#1c1b19] p-[7px] shadow-glow">
+                    <img
+                      src={phone.image}
+                      alt={phone.alt}
+                      width={469}
+                      height={1015}
+                      className="aspect-[469/1015] w-full rounded-[28px] object-cover"
+                      loading="eager"
+                    />
+                  </div>
+                </a>
+              ))}
             </div>
-            <div className="depth absolute bottom-0 left-4 inline-flex items-center gap-2 rounded-full bg-surface px-4 py-2 text-[13px] text-fg shadow-soft">
+            <div className="depth absolute bottom-0 left-1/2 inline-flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full bg-surface px-4 py-2 text-[13px] text-fg shadow-soft">
               <Smartphone className="size-4 text-accent" />
               {hero.imageNote}
             </div>

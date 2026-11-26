@@ -47,15 +47,26 @@ export const nav = {
 
 export const hero = {
   kicker: `Manresa · ${brand.zone}`,
-  title: 'Ajudo els negocis petits de la Catalunya Central a no perdre clients:',
-  accent: 'web, reserves, recordatoris i un assistent que respon quan tu no pots.',
-  lead: 'Fet amb eines d’IA: més ràpid i més barat, però amb tracte de proximitat.',
+  title: 'La web del teu negoci, perquè et trobin al mòbil',
+  accent: 'abans que la competència.',
+  lead: 'Webs des de 450 € per a negocis de la Catalunya Central, amb el preu i la data d’entrega per escrit abans de començar.',
   primary: mostra,
   secondary: { label: 'Veure els preus', href: '#preus' },
   points: ['Mostra gratis i sense compromís', 'Domini al teu nom', 'Dues rondes de canvis incloses'],
-  image: asset('/images/hero.jpg'),
-  imageAlt: 'Mostrador d’un petit negoci amb un ordinador i un mòbil',
-  imageNote: 'Dissenyada primer per al mòbil',
+  // Dos exemples reals fets amb les plantilles (negocis inventats), dins d'un mòbil.
+  phones: [
+    {
+      image: asset('/images/hero-mobil-perruqueria.jpg'),
+      alt: 'Exemple de web per a una perruqueria vista en un mòbil',
+      href: 'https://vora-webs.vercel.app/s/estudi-alba',
+    },
+    {
+      image: asset('/images/hero-mobil-casa-rural.jpg'),
+      alt: 'Exemple de web per a una casa rural vista en un mòbil',
+      href: 'https://vora-webs.vercel.app/s/mas-de-la-boira',
+    },
+  ],
+  imageNote: 'Exemples fets amb les meves plantilles',
 }
 
 export const sectors = {
