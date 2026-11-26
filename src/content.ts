@@ -23,6 +23,7 @@ const links = {
   whatsapp: `https://wa.me/${phone.digits}`,
   tel: `tel:+${phone.digits}`,
   mail: `mailto:${email}`,
+  instagram: 'https://www.instagram.com/voradigital.web/',
 }
 
 // WhatsApp amb el missatge ja escrit, per demanar un servei o un pack solt.
@@ -263,6 +264,7 @@ export const contact = {
   email: { label: 'Enviar un correu', value: email, href: links.mail },
   phone: { label: 'Trucar', value: phone.display, href: links.tel },
   note: 'Soc a Manresa. Parlem per telèfon, per WhatsApp o al teu local, com et vagi millor.',
+  instagram: { label: 'Més exemples a @voradigital.web', href: links.instagram },
 }
 
 export const footer = {
@@ -284,6 +286,7 @@ export const footer = {
         { label: `WhatsApp · ${phone.display}`, href: links.whatsapp },
         { label: `Telèfon · ${phone.display}`, href: links.tel },
         { label: `Correu · ${email}`, href: links.mail },
+        { label: 'Instagram · @voradigital.web', href: links.instagram },
       ],
     },
     {

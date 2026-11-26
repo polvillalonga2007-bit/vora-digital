@@ -1,4 +1,4 @@
-import { Mail, MessageCircle, Phone } from 'lucide-react'
+import { Camera, Mail, MessageCircle, Phone } from 'lucide-react'
 
 import { Container } from '../components/Container'
 import { contact } from '../content'
@@ -60,6 +60,15 @@ export function Contact() {
             </dl>
 
             <p className="mt-7 text-[13px] leading-relaxed text-bg/60">{contact.note}</p>
+            <a
+              href={contact.instagram.href}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-flex items-center gap-2 text-[14px] font-medium text-bg underline decoration-bg/40 underline-offset-4 hover:decoration-bg"
+            >
+              <Camera className="size-4" />
+              {contact.instagram.label}
+            </a>
           </div>
         </div>
       </Container>
