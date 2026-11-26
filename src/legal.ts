@@ -19,8 +19,8 @@ export type LegalPage = {
 
 // El titular del lloc. Quan el coworking doni l'adreça, afegeix a TOWN el
 // carrer, el número i el codi postal (per exemple: «Carrer X, 12, 08241 Manresa»).
-const OWNER = '[[NOM]]'
-const NIF = '[[NIF]]'
+const OWNER = 'Pol Villalonga'
+const NIF = '39475092P'
 const TOWN = 'Manresa (Bages)'
 const EMAIL = 'voradigital.web@gmail.com'
 const PHONE = '623 61 03 31'

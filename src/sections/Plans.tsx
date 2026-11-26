@@ -45,7 +45,7 @@ export function Plans() {
                 <p className="mt-4 text-[14.5px] leading-relaxed text-muted">{tier.text}</p>
 
                 <Button
-                  href="#contacte"
+                  href={tier.href}
                   variant={tier.featured ? 'primary' : 'secondary'}
                   className="mt-6 w-full sm:mt-7"
                 >

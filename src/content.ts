@@ -28,16 +28,21 @@ const links = {
 // WhatsApp amb el missatge ja escrit, per demanar un servei o un pack solt.
 export const whatsappFor = (message: string) => `${links.whatsapp}?text=${encodeURIComponent(message)}`
 
+// Botó principal de tota la pàgina: demanar una mostra per WhatsApp.
+const mostra = {
+  label: 'Demanar una mostra',
+  href: whatsappFor('Hola, m’agradaria veure una mostra de com quedaria la web del meu negoci.'),
+}
+
 export const nav = {
   links: [
     { label: 'Sectors', href: '#sectors' },
     { label: 'Què inclou', href: '#inclou' },
     { label: 'Procés', href: '#proces' },
     { label: 'Preus', href: '#preus' },
-    { label: 'Serveis', href: '#serveis' },
     { label: 'Preguntes', href: '#preguntes' },
   ],
-  cta: { label: 'Demanar informació', href: '#contacte' },
+  cta: mostra,
 }
 
 export const hero = {
@@ -45,9 +50,9 @@ export const hero = {
   title: 'Ajudo els negocis petits de la Catalunya Central a no perdre clients:',
   accent: 'web, reserves, recordatoris i un assistent que respon quan tu no pots.',
   lead: 'Fet amb eines d’IA: més ràpid i més barat, però amb tracte de proximitat.',
-  primary: { label: 'Demanar informació', href: '#contacte' },
+  primary: mostra,
   secondary: { label: 'Veure els preus', href: '#preus' },
-  points: ['Sense quotes mensuals obligatòries', 'Domini al teu nom', 'Dues rondes de canvis incloses'],
+  points: ['Mostra gratis i sense compromís', 'Domini al teu nom', 'Dues rondes de canvis incloses'],
   image: asset('/images/hero.jpg'),
   imageAlt: 'Mostrador d’un petit negoci amb un ordinador i un mòbil',
   imageNote: 'Dissenyada primer per al mòbil',
@@ -153,7 +158,8 @@ export const plans = {
       price: 450,
       tag: 'Per començar',
       text: 'Una web senzilla i ben resolta, a partir d’una plantilla adaptada al teu negoci.',
-      cta: 'Demanar informació',
+      cta: 'M’interessa el Bàsic',
+      href: whatsappFor('Hola, m’interessa la web Bàsic (450 €).'),
     },
     {
       name: 'Estàndard',
@@ -161,14 +167,16 @@ export const plans = {
       tag: 'El més recomanat',
       featured: true,
       text: 'Amb més espai per explicar el negoci: la web que respon les preguntes abans que et truquin.',
-      cta: 'Demanar informació',
+      cta: 'M’interessa l’Estàndard',
+      href: whatsappFor('Hola, m’interessa la web Estàndard (690 €).'),
     },
     {
       name: 'Alta gamma',
       price: 1500,
       tag: 'A mida',
       text: 'Dissenyada des de zero per al teu negoci, sense partir de cap plantilla.',
-      cta: 'Demanar informació',
+      cta: 'M’interessa l’Alta gamma',
+      href: whatsappFor('Hola, m’interessa la web Alta gamma (1.500 €).'),
     },
   ],
   includedTitle: 'En tots els plans',
@@ -176,111 +184,17 @@ export const plans = {
     '50 % a l’inici i 50 % a l’entrega',
     'Dues rondes de canvis incloses',
     'Domini al teu nom, primer any inclòs',
-    'Cap quota mensual obligatòria',
+    'Preu, abast i data d’entrega per escrit',
   ],
   maintenance: {
     title: 'Manteniment opcional',
-    text: 'Si vols que m’ocupi de les actualitzacions i dels canvis petits, ho pots contractar. El Plus inclou, a més, un extra al teu gust: recordatoris de cita o assistent a la web.',
+    text: 'Si vols que m’ocupi de les actualitzacions i dels canvis petits, ho pots contractar al mes.',
     options: [
       { name: 'Essencial', price: 29, text: 'Actualitzacions i canvis petits.' },
-      { name: 'Plus', price: 49, text: 'A més, un extra: recordatoris o assistent.' },
+      { name: 'Plus', price: 49, text: 'Més canvis i un extra al teu gust.' },
     ],
     note: 'Sense manteniment, els canvis es cobren a 30 €/hora.',
   },
-}
-
-// Serveis que es poden contractar sols, sense fer la web.
-export const services = {
-  eyebrow: 'Fora de la web',
-  title: 'Serveis per separat o combinats',
-  description:
-    'No cal que facis la web amb mi. Pots contractar només l’app, només l’assistent, només les reserves o els recordatoris, i els connecto a la web que ja tinguis o a Google i WhatsApp.',
-  ctaLabel: 'Vull només això',
-  note: 'Preus «des de», sense IVA. Si ja tens web, hi connecto el servei; si no, també te’n puc fer una.',
-  items: [
-    {
-      key: 'google',
-      name: 'Fitxa de Google al dia',
-      problem: 'Que et trobin i vegin les dades bones.',
-      text: 'Deixo la teva fitxa de Google amb els horaris, el telèfon, les fotos i els serveis correctes, que és el primer que mira qui et busca pel nom.',
-      price: '90 €',
-      period: 'pagament únic',
-      from: true,
-      href: whatsappFor('Hola, m’interessa només la fitxa de Google al dia'),
-    },
-    {
-      key: 'reserves',
-      name: 'Reserva online',
-      problem: 'Que triïn dia i hora sense trucar.',
-      text: 'Un calendari a la web amb els teus horaris reals: el client reserva quan li va bé, encara que tu estiguis treballant.',
-      price: '150 €',
-      period: 'pagament únic',
-      from: true,
-      href: whatsappFor('Hola, m’interessa només la reserva online'),
-    },
-    {
-      key: 'recordatoris',
-      name: 'Recordatoris de cita',
-      problem: 'Menys gent que no es presenta.',
-      text: 'Cada client rep un correu automàtic 24 hores abans de la cita, amb l’hora, l’adreça i com canviar-la si no pot venir.',
-      price: '150 €',
-      period: '+ 15 €/mes',
-      from: true,
-      href: whatsappFor('Hola, m’interessa només els recordatoris de cita'),
-    },
-    {
-      key: 'assistent',
-      name: 'Assistent a la web 24 h',
-      problem: 'Que ningú no es quedi sense resposta.',
-      text: 'Respon horaris, preus i serveis quan tu no hi ets, i passa a WhatsApp els casos que necessiten una persona.',
-      price: '250 €',
-      period: '+ 19 €/mes',
-      from: true,
-      href: whatsappFor('Hola, m’interessa només l’assistent a la web'),
-    },
-    {
-      key: 'app',
-      name: 'App per al mòbil',
-      problem: 'Que tornin sense targetes de paper.',
-      text: 'Targeta de punts, avisos i carta al mòbil del client, amb la teva marca. Et passo pressupost segons què hi vulguis.',
-      price: 'a consultar',
-      period: '',
-      from: false,
-      href: whatsappFor('Hola, m’interessa només l’app per al mòbil'),
-    },
-  ],
-}
-
-// Packs: la web amb els serveis que la fan rendir més.
-export const packs = {
-  eyebrow: 'Packs',
-  title: 'Si ho vols tot, surt més a compte',
-  description:
-    'Dos conjunts pensats per a negocis que reben clients amb hora. Surten més barats que contractar les peces per separat.',
-  cta: 'Vull aquest pack',
-  note: 'Els packs inclouen el manteniment Plus (49 €/mes) mentre duri el servei. Tots els imports són sense IVA.',
-  items: [
-    {
-      key: 'cita',
-      name: 'Pack Cita',
-      audience: 'Perruqueries, fisios i tallers',
-      text: 'Per a qui rep clients amb hora reservada: que en triïn una des de la web i que ningú no se n’oblidi.',
-      includes: ['Web Estàndard', 'Reserva online', 'Recordatoris de cita'],
-      price: 890,
-      maintenance: 'Manteniment Plus',
-      href: whatsappFor('Hola, m’interessa el Pack Cita'),
-    },
-    {
-      key: 'bar',
-      name: 'Pack Bar',
-      audience: 'Bars i restaurants',
-      text: 'Per a qui no pot atendre el telèfon a mig servei: l’assistent respon horaris, carta i reserves, i el que calgui passa a WhatsApp.',
-      includes: ['Web Estàndard', 'Assistent a la web 24 h'],
-      price: 890,
-      maintenance: 'Manteniment Plus',
-      href: whatsappFor('Hola, m’interessa el Pack Bar'),
-    },
-  ],
 }
 
 export const faq = {
@@ -304,12 +218,20 @@ export const faq = {
       a: 'Sí. El domini es registra al teu nom i el primer any va inclòs. A partir del segon any, la renovació és a càrrec teu i et diré el preu abans.',
     },
     {
-      q: 'He de pagar manteniment cada mes?',
-      a: 'No. Cap pla porta quota mensual obligatòria. Si vols, pots contractar el manteniment Essencial (29 €/mes) o Plus (49 €/mes), que a més inclou un extra: recordatoris de cita o assistent. Si no, els canvis que demanis es cobren a 30 €/hora.',
+      q: 'Què és la mostra?',
+      a: 'Una petita demo de com podria quedar la web del teu negoci, amb el nom i el que fas. No hi poso fotos teves ni res que hagis de preparar. És gratis i no t’obliga a res: si t’agrada, en parlem.',
     },
     {
-      q: 'Puc contractar només una part?',
-      a: 'Sí. La reserva online, els recordatoris, l’assistent, la fitxa de Google o l’app es poden contractar sols, sense fer la web amb mi. Els connecto a la web que ja tinguis o a Google i WhatsApp.',
+      q: 'Com pots fer-ho a aquest preu?',
+      a: 'Treballo amb plantilles pròpies i eines d’IA que m’estalvien les hores més mecàniques. El temps el poso on compta: entendre el teu negoci i deixar els textos i el disseny ben resolts.',
+    },
+    {
+      q: 'Hi ha manteniment?',
+      a: 'És opcional: Essencial (29 €/mes) o Plus (49 €/mes). Si no en vols, els canvis que demanis es cobren a 30 €/hora.',
+    },
+    {
+      q: 'Fas altres coses a part de la web?',
+      a: 'Sí: posar al dia la fitxa de Google, reserves online, recordatoris de cita o un assistent a la web. Te’ls pressuposto a part, segons el que necessiti el teu negoci.',
     },
     {
       q: 'Els preus porten IVA?',
@@ -325,8 +247,8 @@ export const faq = {
 export const contact = {
   eyebrow: 'Parlem-ne',
   title: 'Explica’m què tens al cap',
-  lead: 'Digues-me com es diu el negoci, què fas i on ets. Si ja tens web, hi faig una ullada. Et responc amb les preguntes que calguin i una proposta.',
-  whatsapp: { label: 'Escriure per WhatsApp', value: phone.display, href: links.whatsapp },
+  lead: 'Digues-me com es diu el negoci, què fas i on ets, i et preparo una mostra de com quedaria la teva web. Gratis i sense compromís.',
+  whatsapp: { label: 'Demanar una mostra per WhatsApp', value: phone.display, href: mostra.href },
   email: { label: 'Enviar un correu', value: email, href: links.mail },
   phone: { label: 'Trucar', value: phone.display, href: links.tel },
   note: 'Soc a Manresa. Parlem per telèfon, per WhatsApp o al teu local, com et vagi millor.',
@@ -342,8 +264,6 @@ export const footer = {
         { label: 'Què inclou', href: asset('#inclou') },
         { label: 'Procés', href: asset('#proces') },
         { label: 'Preus', href: asset('#preus') },
-        { label: 'Serveis', href: asset('#serveis') },
-        { label: 'Packs', href: asset('#packs') },
         { label: 'Preguntes', href: asset('#preguntes') },
       ],
     },
