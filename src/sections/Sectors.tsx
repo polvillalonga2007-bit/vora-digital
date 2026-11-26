@@ -11,7 +11,7 @@ export function Sectors() {
       <Container>
         <SectionHeading eyebrow={sectors.eyebrow} title={sectors.title} description={sectors.description} />
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {sectors.items.map((sector, index) => (
             <Reveal key={sector.key} delay={index * 0.07} className="h-full">
               <article className="depth flex h-full flex-col overflow-hidden rounded-card bg-surface shadow-soft">

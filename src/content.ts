@@ -86,8 +86,17 @@ export const sectors = {
       imageAlt: 'Menjador d’un restaurant petit amb taules parades',
       example: 'https://vora-webs.vercel.app/s/brasa-del-pont',
     },
+    {
+      key: 'allotjament',
+      name: 'Allotjament rural',
+      text: 'Cases rurals, masies i petits allotjaments. Que qui busca escapada vegi les habitacions, l’entorn i com fer la reserva.',
+      points: ['Habitacions i fotos', 'Entorn i com arribar-hi', 'Consulta de disponibilitat'],
+      image: asset('/images/sector-allotjament.jpg'),
+      imageAlt: 'Habitació d’una casa rural amb parets de pedra i capçal de fusta blava',
+      example: 'https://vora-webs.vercel.app/s/mas-de-la-boira',
+    },
   ],
-  examplesLabel: 'Veure una web d’exemple',
+  examplesLabel: 'Veure un exemple',
   examplesNote: 'Els exemples són negocis inventats, fets amb les mateixes plantilles que faig servir per als clients.',
 }
 
